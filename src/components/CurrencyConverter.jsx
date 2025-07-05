@@ -18,7 +18,9 @@ function CurrencyConverter() {
     //     .catch(err => console.log(err))
 
     // // FOR TESTING
-    setOutput(amount * 2);
+    const newAmount = (parseInt(amount) <0 || isNaN(amount)) ? 0 : amount;
+
+    setOutput(newAmount * 2);
   }, [fromCurrency, toCurrency, amount]);
 
   const handleAmountChange = useCallback((event) => {
